@@ -8,14 +8,6 @@ typedef NS_OPTIONS(NSUInteger, NMSSHLogFlag) {
     NMSSHLogFlagError   = (1 << 3)
 };
 
-@interface NMSSHLogger ()
-#if OS_OBJECT_USE_OBJC
-@property (nonatomic, strong) dispatch_queue_t loggerQueue;
-#else
-@property (nonatomic, assign) dispatch_queue_t loggerQueue;
-#endif
-@end
-
 @implementation NMSSHLogger
 
 // -----------------------------------------------------------------------------

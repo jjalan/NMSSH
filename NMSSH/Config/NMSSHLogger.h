@@ -44,6 +44,12 @@ typedef NS_OPTIONS(NSUInteger, NMSSHLogLevel) {
 /** Enable or disable the logging feature */
 @property (nonatomic, assign, getter = isEnabled) BOOL enabled;
 
+#if OS_OBJECT_USE_OBJC
+@property (nonatomic, strong) dispatch_queue_t loggerQueue;
+#else
+@property (nonatomic, assign) dispatch_queue_t loggerQueue;
+#endif
+
 /// ----------------------------------------------------------------------------
 /// @name Logging
 /// ----------------------------------------------------------------------------
